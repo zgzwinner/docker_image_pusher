@@ -1,15 +1,26 @@
+hello-world:nanoserver-ltsc2022
+
+"""
+alpine
+kasmweb/nginx:1.25.3
+python:alpine3.19
+"""
+
+"""
+docker run -d \
+  --name wewe-rss \
+  -p 4000:4000 \
+  -e DATABASE_TYPE=sqlite \
+  -e AUTH_CODE=123567 \
+  -v $(pwd)/data:/app/data \
+  cooderl/wewe-rss-sqlite:latest ###最后一句拉取镜像，再在SHH里把最后一句换成阿里云镜像源地址
+"""
+
+"""
 nginx
 #支持私库
 k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.0.0
 xhofe/alist:latest
 #支持指定架构
---platform=linux/amd64 xiaoyaliu/alist
-
-
-
-###nginx
-#支持私库
-###k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.0.0
-###xhofe/alist:latest
-#支持指定架构
-###--platform=linux/arm64 xiaoyaliu/alist
+--platform=linux/arm64 xiaoyaliu/alist
+"""
